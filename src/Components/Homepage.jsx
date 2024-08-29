@@ -13,6 +13,7 @@ const Homepage = () => {
   const [countData, setCountData] = useState(tableData);
   const [modal, setModal] = useState(false);
   const [overlay, setOverlay] = useState(false);
+  const [selectedRows, setSelectedRows] = useState([]);
 
   useEffect(() => {
     if (selectedTab === "All") {
@@ -55,9 +56,14 @@ const Homepage = () => {
         setData={setData}
         setModal={setModal}
         setOverlay={setOverlay}
+        selectedRows={selectedRows}
       />
       <Tabs categoryCounts={categoryCounts} setSelectedTab={setSelectedTab} />
-      <Table data={data} />
+      <Table
+        data={data}
+        selectedRows={selectedRows}
+        setSelectedRows={setSelectedRows}
+      />
       {overlay && <Overlay setModal={setModal} setOverlay={setOverlay} />}
       {modal && (
         <Modal

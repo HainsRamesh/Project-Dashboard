@@ -1,6 +1,7 @@
 import { FaBell } from "react-icons/fa6";
 import { RxQuestionMarkCircled } from "react-icons/rx";
 import user from "../Images/user.jpg";
+import { tableData } from "../Data";
 
 const Header = ({ data }) => {
   let archived = data.filter((item) => item.projectStatus === "Archived");

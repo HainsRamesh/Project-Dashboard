@@ -5,7 +5,13 @@ import { BsFillSlashSquareFill } from "react-icons/bs";
 import { MdFilterListAlt } from "react-icons/md";
 import { FaPlus } from "react-icons/fa6";
 
-const SearchForm = ({ tableData, setData, setModal, setOverlay }) => {
+const SearchForm = ({
+  tableData,
+  setData,
+  setModal,
+  setOverlay,
+  selectedRows,
+}) => {
   const actions = ["Delete", "Archive"];
   const categories = [
     "All",
@@ -47,7 +53,7 @@ const SearchForm = ({ tableData, setData, setModal, setOverlay }) => {
       <form>
         <div className="md:flex items-center font-normal">
           <div className="text-gray-500 text-sm inline-block md:block mr-2 md:mr-0">
-            <span>6 </span>
+            <span>{selectedRows.length} </span>
             <span>selected</span>
           </div>
           <select
